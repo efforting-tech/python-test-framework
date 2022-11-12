@@ -1,0 +1,42 @@
+Test: basic_tests.success
+    Description: This is the first test demonstration and it will succeed
+    Status: Success
+
+    Output:
+        This test prints a thing and succeeds
+
+Test: basic_tests.failure
+    Description: This test will fail, and that is expected
+    Status: Success
+
+Test: basic_tests
+    Description: This just demonstrates that tests can be grouped
+    Status: Success
+
+Test: iter_var.var_test['test']
+    Description: Testing if 'test' is within allowed range
+    Status: Failure
+
+        Traceback (most recent call last):
+          File "/home/devilholk/Projects/test-framework-python/examples/demo1.py", line 56, in var_test
+            assert ref >= 2, f'Oh noes, {name!r} ({ref}) was outside of the allowed range'
+        AssertionError: Oh noes, 'test' (1) was outside of the allowed range
+
+Test: iter_var.var_test['thing']
+    Description: Testing if 'thing' is within allowed range
+    Status: Success
+
+Test: iter_var.var_test['hello']
+    Description: Testing if 'hello' is within allowed range
+    Status: Success
+
+Test: iter_var.var_test['world']
+    Description: Testing if 'world' is within allowed range
+    Status: Success
+
+Test: iter_var
+    Description: Demonstrates how one could use IterVar to perform multiple tests
+    Status: Success
+
+Test summary:
+    Total: 10, Skipped: 2, Succeeded: 7, Failed: 1
