@@ -8,7 +8,8 @@ def load_and_run_test(filename):
 	try:
 
 		state.original_builtins = dict(builtins.__dict__)
-		builtins.__dict__.update(test_features.__dict__)
+		NO_EXPORT = set(test_features.NO_EXPORT.split())
+		builtins.__dict__.update({k: v for k, v in test_features.__dict__.items() if k not in NO_EXPORT})
 
 		filename = Path(filename)	#Upgrade to Path
 
