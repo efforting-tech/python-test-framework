@@ -5,7 +5,7 @@ import fnmatch
 from . import state
 
 #List of things to not include in the tests
-NO_EXPORT = 'sys state NO_EXPORT'
+NO_EXPORT = 'fnmatch sys state NO_EXPORT'
 
 
 def __build_class__(func, name, *bases, metaclass=type, **kwds):
