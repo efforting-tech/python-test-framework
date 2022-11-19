@@ -4,6 +4,9 @@ from pathlib import Path
 from . import test_features, state
 import builtins
 
+#TODO - when a test has sub tests it should only be considered succeeded if all sub tests as also succeeding.
+#TODO - maybe keep track of when importing other tests so we can group them nicer
+
 def load_and_run_test(filename):
 	try:
 
