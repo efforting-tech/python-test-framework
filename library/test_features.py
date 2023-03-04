@@ -23,7 +23,7 @@ def __build_class__(func, name, *bases, metaclass=type, **kwds):
 def print(*items):
 	if state.test_stack:
 		printed_items = state.test_stack[-1]
-		printed_items.append(items)
+		printed_items.append(tuple(map(str, items)))	#Convert to string here in case item changes
 	else:
 		#This is outside of a running test - perhaps when loading the test file, we will just print it as normal
 		state.original_builtins['print'](*items)
